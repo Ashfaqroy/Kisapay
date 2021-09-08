@@ -115,6 +115,16 @@ class _ProfileState extends State<Profile> {
                     textAlign: TextAlign.left,
                   ),
                   Spacer(),
+                  Text(
+                    'Lihat Detailr',
+                    style: TextStyle(
+                      fontFamily: 'Malgun Gothic',
+                      fontSize: 12,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
                   Icon(CupertinoIcons.chevron_forward, color: Colors.blue,)
                 ],
               ),
@@ -153,10 +163,6 @@ class _ProfileState extends State<Profile> {
                   ),
                 ],
               ),
-            ),
-            ProfileButton(
-              title: 'Kisapay Stamp',
-              IconImage: 'assets/icons/gs.png',
             ),
             SizedBox(
               height: 5,

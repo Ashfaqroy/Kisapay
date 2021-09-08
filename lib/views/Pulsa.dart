@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './Homepage.dart';
@@ -17,7 +18,7 @@ class Pulsa extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 300,
+              height: 250,
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -34,7 +35,7 @@ class Pulsa extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Image.asset("assets/icons/Group 183.png"),
+                      IconButton(onPressed: ()=>Navigator.pop(context), icon: Icon(CupertinoIcons.chevron_back)),
                       SizedBox(
                         width: 10,
                       ),
@@ -50,15 +51,40 @@ class Pulsa extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text(
-                    'Nomor Ponsel',
-                    style: TextStyle(
-                      fontFamily: 'Malgun Gothic',
-                      fontSize: 14,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  SizedBox(height: 10,),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      children: [
+                        Image.asset("assets/icons/Group 183.png"),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Telkomsel',
+                          style: TextStyle(
+                            fontFamily: 'Malgun Gothic',
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
                     ),
-                    textAlign: TextAlign.left,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      'Nomor Ponsel',
+                      style: TextStyle(
+                        fontFamily: 'Malgun Gothic',
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
                   Align(
                     alignment: Alignment.center,
@@ -78,19 +104,25 @@ class Pulsa extends StatelessWidget {
                           ],
                           color: Color(0xfff1f1f1),
                         ),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Isi Pulsa',
-                              style: TextStyle(
-                                fontFamily: 'Malgun Gothic',
-                                fontSize: 14,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w700,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 30),
+                          child: Row(
+                            children: [
+                              Text(
+                                '0812673131',
+                                style: TextStyle(
+                                  fontFamily: 'Malgun Gothic',
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                                textAlign: TextAlign.left,
                               ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ],
+                              Spacer(),
+                              Icon(CupertinoIcons.clear,color: Colors.blue[900],)
+
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -124,7 +156,7 @@ class Pulsa extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Malgun Gothic',
                           fontSize: 14,
-                          color: Colors.black,
+                          color: Colors.blue,
                           fontWeight: FontWeight.w700,
                         ),
                         textAlign: TextAlign.left,
@@ -133,7 +165,7 @@ class Pulsa extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 5,
+                  width: 1,
                 ),
                 Expanded(
                   child: Container(
@@ -156,7 +188,7 @@ class Pulsa extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Malgun Gothic',
                           fontSize: 14,
-                          color: Colors.black,
+                          color: Colors.grey,
                           fontWeight: FontWeight.w700,
                         ),
                         textAlign: TextAlign.left,

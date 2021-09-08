@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class FABBottomAppBarItem {
   FABBottomAppBarItem({this.iconData, this.text});
+
   String? iconData;
   String? text;
 }
 
 class FABBottomAppBar extends StatefulWidget {
-
   FABBottomAppBar({
     this.items,
     this.centerItemText,
     this.height: 60.0,
-    this.iconSize: 24.0,
+    this.iconSize: 30.0,
     this.backgroundColor,
     this.color,
     this.selectedColor,
@@ -21,6 +21,7 @@ class FABBottomAppBar extends StatefulWidget {
   }) {
     assert(this.items!.length == 2 || this.items!.length == 4);
   }
+
   final List<FABBottomAppBarItem>? items;
   final String? centerItemText;
   final double? height;
@@ -91,7 +92,8 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     int? index,
     ValueChanged<int>? onPressed,
   }) {
-    Color? color = _selectedIndex == index ? widget.selectedColor : widget.color;
+    Color? color =
+        _selectedIndex == index ? widget.selectedColor : widget.color;
     return Expanded(
       child: SizedBox(
         height: widget.height,
@@ -103,7 +105,20 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-            ImageIcon(AssetImage(item!.iconData.toString()),color: color, size: widget.iconSize),
+                (item!.text.toString() == "FINANCE")
+                    ? Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          ImageIcon(AssetImage(item!.iconData.toString()),
+                              color: color, size: widget.iconSize),
+                          Text(
+                            "Rp",
+                            style: TextStyle(fontSize: 8, color: Colors.white),
+                          ),
+                        ],
+                      )
+                    : ImageIcon(AssetImage(item!.iconData.toString()),
+                        color: color, size: widget.iconSize),
                 Text(
                   item!.text.toString(),
                   style: TextStyle(color: color),

@@ -11,6 +11,7 @@ import 'package:kisapay/views/history.dart';
 import 'package:kisapay/views/kisapay_proteksi.dart';
 import 'package:kisapay/views/lainnya.dart';
 import 'package:kisapay/views/profile.dart';
+import 'package:kisapay/views/scan.dart';
 import 'package:kisapay/views/transfer.dart';
 import 'package:kisapay/views/voucher_game.dart';
 
@@ -75,7 +76,7 @@ class _HomepageState extends State<Homepage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {Get.to(Scan());},
         child: ImageIcon(AssetImage("assets/icons/scan.png"),color: Colors.black,),
         elevation: 2.0,
       ),
@@ -152,7 +153,7 @@ class _HomepageState extends State<Homepage> {
                                 fontFamily: 'Malgun Gothic',
                                 fontSize: 12,
                                 color: Colors.white,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.left,
                             ),
@@ -683,224 +684,227 @@ class _HomepageState extends State<Homepage> {
 
                   Container(
                     height: 220,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
+                      child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 280,
-                          width: 160,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(0),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  blurRadius: 2.0,
-                                  spreadRadius: 0.0,
-                                  offset: Offset(2.0,
-                                      2.0), // shadow direction: bottom right
-                                )
-                              ]),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(0),
-                                    image: DecorationImage(image: AssetImage("assets/images/Group 94.png"),fit: BoxFit.fill),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 2.0,
-                                        spreadRadius: 0.0,
-                                        offset: Offset(2.0,
-                                            2.0), // shadow direction: bottom right
-                                      )
-                                    ]),
-                                child: Row(children: [
-                                  SizedBox(width: 5,),
-                                  Column(
-                                    children: [
-                                      Container(
-                                        width: 70,
-                                        child: Text(
-                                          'Kisapay pusat Bantuan',
-                                          style: TextStyle(
-                                            fontFamily: 'Malgun Gothic',
-                                            fontSize: 14,
-                                            color: Colors.red,
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 280,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(0),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 2.0,
+                                    spreadRadius: 0.0,
+                                    offset: Offset(2.0,
+                                        2.0), // shadow direction: bottom right
+                                  )
+                                ]),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(0),
+                                      image: DecorationImage(image: AssetImage("assets/images/Group 94.png"),fit: BoxFit.fill),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey,
+                                          blurRadius: 2.0,
+                                          spreadRadius: 0.0,
+                                          offset: Offset(2.0,
+                                              2.0), // shadow direction: bottom right
+                                        )
+                                      ]),
+                                  child: Row(children: [
+                                    SizedBox(width: 5,),
+                                    Column(
+                                      children: [
+                                        Container(
+                                          width: 70,
+                                          child: Text(
+                                            'Kisapay pusat Bantuan',
+                                            style: TextStyle(
+                                              fontFamily: 'Malgun Gothic',
+                                              fontSize: 14,
+                                              color: Colors.red,
+                                            ),
+                                            textAlign: TextAlign.left,
                                           ),
-                                          textAlign: TextAlign.left,
                                         ),
-                                      ),
-                                      Container(
-                                        width: 70,
-                                        child: Text(
-                                          'Lorem ipsum dolor sit amet, consetetur',
-                                          style: TextStyle(
-                                            fontFamily: 'Malgun Gothic',
-                                            fontSize: 10,
-                                            color: Colors.black,
+                                        Container(
+                                          width: 70,
+                                          child: Text(
+                                            'Lorem ipsum dolor sit amet, consetetur',
+                                            style: TextStyle(
+                                              fontFamily: 'Malgun Gothic',
+                                              fontSize: 10,
+                                              color: Colors.black,
+                                            ),
+                                            textAlign: TextAlign.left,
                                           ),
-                                          textAlign: TextAlign.left,
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Spacer(),
-                                  Image.asset("assets/images/4.png"),
-                                  SizedBox(width: 5,),
-                                ],),
-                              ),
-                              SizedBox(height: 10,),
-                              Text(
-                                'Pusat Bantuan',
-                                style: TextStyle(
-                                  fontFamily: 'Malgun Gothic',
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                      ],
+                                    ),
+                                    Spacer(),
+                                    Image.asset("assets/images/4.png"),
+                                    SizedBox(width: 5,),
+                                  ],),
                                 ),
-                                textAlign: TextAlign.left,
-                              ),
-                              SizedBox(height: 10,),
-                              Text(
-                                'Lorem ipsum dolor sit amet, consetetur',
-                                style: TextStyle(
-                                  fontFamily: 'Malgun Gothic',
-                                  fontSize: 12,
-                                  color: Colors.black,
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                              SizedBox(height: 10,),
-                              Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Text(
-                                  'Lihat Bantuan',
+                                SizedBox(height: 10,),
+                                Text(
+                                  'Pusat Bantuan',
                                   style: TextStyle(
                                     fontFamily: 'Malgun Gothic',
-                                    fontSize: 14,
-                                    color: Colors.blue,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.bold,
+                                    color: Colors.black,
                                   ),
                                   textAlign: TextAlign.left,
                                 ),
-                              ),
+                                SizedBox(height: 10,),
+                                Text(
+                                  'Lorem ipsum dolor sit amet, consetetur',
+                                  style: TextStyle(
+                                    fontFamily: 'Malgun Gothic',
+                                    fontSize: 12,
+                                    color: Colors.black,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                ),
+                                SizedBox(height: 10,),
+                                Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Text(
+                                    'Lihat Bantuan',
+                                    style: TextStyle(
+                                      fontFamily: 'Malgun Gothic',
+                                      fontSize: 14,
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
 
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 280,
-                          width: 160,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(0),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey,
-                                  blurRadius: 2.0,
-                                  spreadRadius: 0.0,
-                                  offset: Offset(2.0,
-                                      2.0), // shadow direction: bottom right
-                                )
-                              ]),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(0),
-                                    image: DecorationImage(image: AssetImage("assets/images/Group 95.png"),fit: BoxFit.fill),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 2.0,
-                                        spreadRadius: 0.0,
-                                        offset: Offset(2.0,
-                                            2.0), // shadow direction: bottom right
-                                      )
-                                    ]),
-                                child: Row(children: [
-                                  SizedBox(width: 5,),Column(
-                                    children: [
-                                      Container(
-                                        width: 70,
-                                        child: Text(
-                                          'Kisapay Invest',
-                                          style: TextStyle(
-                                            fontFamily: 'Malgun Gothic',
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 280,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(0),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 2.0,
+                                    spreadRadius: 0.0,
+                                    offset: Offset(2.0,
+                                        2.0), // shadow direction: bottom right
+                                  )
+                                ]),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(0),
+                                      image: DecorationImage(image: AssetImage("assets/images/Group 95.png"),fit: BoxFit.fill),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey,
+                                          blurRadius: 2.0,
+                                          spreadRadius: 0.0,
+                                          offset: Offset(2.0,
+                                              2.0), // shadow direction: bottom right
+                                        )
+                                      ]),
+                                  child: Row(children: [
+                                    SizedBox(width: 5,),Column(
+                                      children: [
+                                        Container(
+                                          width: 70,
+                                          child: Text(
+                                            'Kisapay Invest',
+                                            style: TextStyle(
+                                              fontFamily: 'Malgun Gothic',
+                                              fontSize: 14,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold
+                                            ),
+                                            textAlign: TextAlign.left,
                                           ),
-                                          textAlign: TextAlign.left,
                                         ),
-                                      ),
-                                      SizedBox(height: 5,),
-                                      Container(
-                                        width: 70,
-                                        child: Text(
-                                          'Lorem ipsum dolor sit amet, consetetur',
-                                          style: TextStyle(
-                                            fontFamily: 'Malgun Gothic',
-                                            fontSize: 10,
-                                            color: Colors.black,
+                                        SizedBox(height: 5,),
+                                        Expanded(
+                                          child: Container(
+                                            width: 70,
+                                            child: Text(
+                                              'Lorem ipsum dolor sit amet, consetetur',
+                                              style: TextStyle(
+                                                fontFamily: 'Malgun Gothic',
+                                                fontSize: 10,
+                                                color: Colors.black,
+                                              ),
+                                              textAlign: TextAlign.left,
+                                            ),
                                           ),
-                                          textAlign: TextAlign.left,
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Spacer(),
-                                  Image.asset("assets/images/3.png"),
-                                  SizedBox(width: 5,),],),
-                              ),
-                              SizedBox(height: 10,),
-                              Text(
-                                'Edukasi Investasi',
-                                style: TextStyle(
-                                  fontFamily: 'Malgun Gothic',
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                      ],
+                                    ),
+                                    Spacer(),
+                                    Image.asset("assets/images/3.png"),
+                                    SizedBox(width: 5,),],),
                                 ),
-                                textAlign: TextAlign.left,
-                              ),
-                              SizedBox(height: 10,),
-                              Text(
-                                'Lorem ipsum dolor sit amet, consetetur',
-                                style: TextStyle(
-                                  fontFamily: 'Malgun Gothic',
-                                  fontSize: 12,
-                                  color: Colors.black,
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                              SizedBox(height: 10,),
-                              Align(
-                                alignment: Alignment.bottomCenter,
-                                child: Text(
-                                  'Cari tahu di sini',
+                                SizedBox(height: 10,),
+                                Text(
+                                  'Edukasi Investasi',
                                   style: TextStyle(
                                     fontFamily: 'Malgun Gothic',
-                                    fontSize: 14,
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.bold
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
                                   ),
                                   textAlign: TextAlign.left,
                                 ),
-                              ),
+                                SizedBox(height: 10,),
+                                Text(
+                                  'Lorem ipsum dolor sit amet, consetetur',
+                                  style: TextStyle(
+                                    fontFamily: 'Malgun Gothic',
+                                    fontSize: 12,
+                                    color: Colors.black,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                ),
+                                SizedBox(height: 10,),
+                                Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Text(
+                                    'Cari tahu di sini',
+                                    style: TextStyle(
+                                      fontFamily: 'Malgun Gothic',
+                                      fontSize: 14,
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.bold
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
 
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
